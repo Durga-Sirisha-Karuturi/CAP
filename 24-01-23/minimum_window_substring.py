@@ -1,5 +1,5 @@
 class Solution:
-  def minWindow( s: str, t: str) -> str:
+    def minWindow(self,s: str, t: str) -> str:
         res=""
         if len(s)>=len(t):
             for i in range(0,len(s)):
@@ -7,9 +7,9 @@ class Solution:
                     temp=s[i:j]
                     flag=True
                     for k in t:
-                        if k not in temp:
+                        if k not in temp  or t.count(k)!=temp.count(k):
                             flag=False
                     if(flag):
                         res=temp
                         break
-         return res
+        return res
